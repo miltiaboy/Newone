@@ -95,7 +95,7 @@ async def send_file(client, query, ident, file_id):
 async def start(client, message):   
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
-                InlineKeyboardButton('⚙ ഉർവശി തീയറ്റേഴ്‌സ് ⚙', url=f'https://t.me/+RBNuafky0to1NDc1')
+                InlineKeyboardButton('⛏️ ഉർവശി തീയറ്റേഴ്‌സ് ⛏️', url=f'https://t.me/+VqyHBSateMcwNjU9')
         ]       
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -110,10 +110,12 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [
-                InlineKeyboardButton('⚙ ഉർവശി തീയറ്റേഴ്‌സ് ⚙', url=f'https://t.me/+RBNuafky0to1NDc1')
+                InlineKeyboardButton('⛏️ ഉർവശി തീയറ്റേഴ്‌സ് ⛏️', url=f'https://t.me/+VqyHBSateMcwNjU9')
         ]               
-        await message.reply_text(            
-            text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),               
+        await message.reply_video(  
+            video="https://envs.sh/2TO.mp4",          
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),  
+            reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
         return
