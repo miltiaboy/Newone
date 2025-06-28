@@ -195,11 +195,12 @@ async def start(client, message):
          
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [
-               InlineKeyboardButton('⚙ ഉർവശി തീയറ്റേഴ്‌സ് ⚙', url=f'https://t.me/+RBNuafky0to1NDc1')
+                InlineKeyboardButton('⛏️ ഉർവശി തീയറ്റേഴ്‌സ് ⛏️', url=f'https://t.me/+VqyHBSateMcwNjU9')
         ]       
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(            
-            text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        await message.reply_video(     
+            video="https://envs.sh/2cQ.mp4",    
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
